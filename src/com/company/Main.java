@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -10,6 +12,14 @@ public class Main {
         workers[2] = new Worker(93820, "Rieger");
         workers[3] = new Worker(38271, "Berger");
         workers[4] = new Worker(20392, "Duller");
+
+        for(Worker worker : workers) {
+            System.out.println(worker);
+        }
+
+        System.out.println();
+
+        Arrays.sort(workers);
 
         for(Worker worker : workers) {
             System.out.println(worker);

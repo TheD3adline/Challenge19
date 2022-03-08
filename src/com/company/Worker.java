@@ -1,6 +1,6 @@
 package com.company;
 
-public class Worker {
+public class Worker implements Comparable {
 
     private int workerID;
     private String lastName;
@@ -13,6 +13,19 @@ public class Worker {
     @Override
     public String toString() {
         return lastName + " " + workerID;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        if (o instanceof Worker) {
+            Worker other = (Worker) o;
+            if(this.workerID < other.workerID)
+                return -1;
+            if(this.workerID > other.workerID)
+                return 1;
+            return 0;
+        }
+        return 0;
     }
 
     public int getWorkerID() {
