@@ -19,6 +19,9 @@ public class Worker implements Comparable {
     public int compareTo(Object o) {
         if (o instanceof Worker) {
             Worker other = (Worker) o;
+            if(this.lastName.compareTo(other.lastName) != 0) {
+                return this.lastName.compareTo(other.lastName);
+            }
             if(this.workerID < other.workerID)
                 return -1;
             if(this.workerID > other.workerID)
